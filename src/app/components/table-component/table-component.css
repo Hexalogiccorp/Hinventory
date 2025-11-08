@@ -1,3 +1,28 @@
 table {
-  width: 100%;
+  width: 50%;
+}
+
+.icon-btn {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 4px;
+}
+
+.icon-btn mat-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.icon-btn mat-icon:hover {
+  transform: scale(1.2);
+}
+
+.edit-btn mat-icon {
+  color: #7AA9EF;
+}
+
+.delete-btn mat-icon {
+  color: #F75050;
 }

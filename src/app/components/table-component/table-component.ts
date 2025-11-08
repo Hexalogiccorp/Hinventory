@@ -2,15 +2,15 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-table-component',
-  imports: [MatTableModule, MatPaginatorModule, CurrencyPipe],
+  imports: [MatTableModule, MatPaginatorModule, CurrencyPipe, MatIconModule],
   standalone: true,
   templateUrl: './table-component.html',
   styleUrls: ['./table-component.css'],
 })
-
 export class TableComponent implements AfterViewInit {
   displayedColumns: string[] = ['photo', 'code', 'name', 'category', 'unitPrice', 'actions'];
   dataSource = new MatTableDataSource<Assets>(ELEMENT_DATA);
@@ -19,6 +19,13 @@ export class TableComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+  }
+
+  protected deleteItem(_t67: any) {
+    console.log('Delete action');
+  }
+  protected editItem(_t67: any) {
+    console.log('Edit action');
   }
 }
 
@@ -59,12 +66,12 @@ const ELEMENT_DATA: Assets[] = [
     unitPrice: 500000,
     photo: 'assets/notebook.png',
   },
-  { 
-    code: 1005, 
-    name: 'Mouse', 
-    category: 'Electronics', 
-    unitPrice: 25000, 
-    photo: 'assets/pen.png' 
+  {
+    code: 1005,
+    name: 'Mouse',
+    category: 'Electronics',
+    unitPrice: 25000,
+    photo: 'assets/pen.png',
   },
   {
     code: 1006,
