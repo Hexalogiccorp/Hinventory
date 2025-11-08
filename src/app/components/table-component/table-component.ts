@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-table-component',
-  imports: [MatTableModule, MatPaginatorModule, CurrencyPipe, MatIconModule],
+  imports: [CommonModule, MatTableModule, MatPaginatorModule, CurrencyPipe, MatIconModule],
   standalone: true,
   templateUrl: './table-component.html',
   styleUrls: ['./table-component.css'],
@@ -21,11 +21,12 @@ export class TableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  protected deleteItem(_t67: any) {
-    console.log('Delete action');
+  protected deleteItem(asset: Assets) {
+    console.log('Delete action', asset);
   }
-  protected editItem(_t67: any) {
-    console.log('Edit action');
+
+  protected editItem(asset: Assets) {
+    console.log('Edit action', asset);
   }
 }
 
@@ -43,41 +44,41 @@ const ELEMENT_DATA: Assets[] = [
     name: 'Laptop',
     category: 'Electronics',
     unitPrice: 850000,
-    photo: 'assets/laptop.png',
+    photo: '',
   },
   {
     code: 1002,
-    name: 'Smartphone',
+    name: 'Iphone 12',
     category: 'Electronics',
     unitPrice: 485000,
-    photo: 'assets/smartphone.png',
+    photo: 'assets/iphone.jpg',
   },
   {
     code: 1003,
     name: 'Desk Chair',
     category: 'Furniture',
     unitPrice: 95000,
-    photo: 'assets/chair.png',
+    photo: '',
   },
   {
     code: 1004,
     name: 'Notebook',
     category: 'Stationery',
     unitPrice: 500000,
-    photo: 'assets/notebook.png',
+    photo: '',
   },
   {
     code: 1005,
     name: 'Mouse',
     category: 'Electronics',
     unitPrice: 25000,
-    photo: 'assets/pen.png',
+    photo: '',
   },
   {
     code: 1006,
     name: 'Headphones',
     category: 'Electronics',
     unitPrice: 35000,
-    photo: 'assets/headphones.png',
+    photo: '',
   },
 ];
