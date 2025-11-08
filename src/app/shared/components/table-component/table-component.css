@@ -1,5 +1,71 @@
 table {
-  width: 50%;
+  width: 100%;
+  background-color: #F1F1F1;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.table-title {
+  font-size: 1.3rem;
+}
+
+.table-tools {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.input-search {
+  padding-left: 35px; 
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.input-search:focus {
+  border-color: #B6B6B6;
+  outline: none;
+}
+
+.table-export {
+  display: flex;
+}
+
+.export-btn {
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.export-btn:hover {
+  transform: scale(1.2);
+}
+
+.excel-icon {
+  color: #059669; 
+}
+
+.pdf-icon {
+  color: #F75050; 
 }
 
 .photo-img {
@@ -13,7 +79,7 @@ table {
   width: 40px;
   height: 40px;
   background: #059669; 
-  color: white;
+  color: #fff;
   font-weight: bold;
   font-size: 18px;
   border-radius: 1px;
@@ -45,4 +111,8 @@ table {
 
 .delete-btn mat-icon {
   color: #F75050;
+}
+
+.pagination {
+  background-color: #F1F1F1;
 }

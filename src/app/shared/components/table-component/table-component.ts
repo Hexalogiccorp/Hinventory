@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -11,15 +11,13 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './table-component.html',
   styleUrls: ['./table-component.css'],
 })
+
 export class TableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['photo', 'code', 'name', 'category', 'unitPrice', 'actions'];
-  dataSource = new MatTableDataSource<Assets>(ELEMENT_DATA);
-
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @Input() title: string = 'Assets';
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
+  protected displayedColumns: string[] = ['photo', 'code', 'name', 'category', 'unitPrice', 'actions'];
+  protected dataSource = new MatTableDataSource<Assets>(ELEMENT_DATA);
 
   protected deleteItem(asset: Assets) {
     console.log('Delete action', asset);
@@ -27,6 +25,10 @@ export class TableComponent implements AfterViewInit {
 
   protected editItem(asset: Assets) {
     console.log('Edit action', asset);
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
 }
 

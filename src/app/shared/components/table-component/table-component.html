@@ -1,4 +1,19 @@
 <div class="mat-elevation-z8">
+  <div class="table-header">
+    <h2 class="table-title">{{ title }}</h2>
+    <div class="table-tools">
+      <div class="search-wrapper">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input type="text" class="input-search" placeholder="Search..." />
+      </div>
+      <div class="table-export">
+        <button class="export-btn">
+          <mat-icon class="excel-icon">insert_drive_file</mat-icon>
+        </button>
+        <button class="export-btn"><mat-icon class="pdf-icon">insert_drive_file</mat-icon></button>
+      </div>
+    </div>
+  </div>
   <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="photo">
       <th mat-header-cell *matHeaderCellDef>Photo</th>
@@ -54,6 +69,7 @@
   </table>
 
   <mat-paginator
+    class="pagination"
     [pageSizeOptions]="[5, 10, 20]"
     showFirstLastButtons
     aria-label="Select page of periodic elements"
