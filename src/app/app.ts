@@ -1,14 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TableColumn, TableComponent } from './shared/components/table-component/table-component';
-
-export interface Product {
-  photo?: string;
-  code: string;
-  name: string;
-  category: string;
-  unitPrice: number;
-}
+import { TableColumn, TableComponent } from './shared';
+import { Asset } from './core';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +21,7 @@ export class App {
     { key: 'actions', label: 'Acciones', type: 'actions' },
   ];
 
-  products: Product[] = [
+  products: Asset[] = [
     {
       code: 'TECH-LAP-001',
       name: 'Laptop Dell Latitude 5420',

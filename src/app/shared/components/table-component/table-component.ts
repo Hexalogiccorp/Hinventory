@@ -3,11 +3,13 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { ExportService } from '../../../core';
+import { Asset } from '../../../core';
 
 export interface TableColumn {
-  key: string; 
-  label: string; 
-  type?: 'text' | 'currency' | 'image' | 'actions'; 
+  key: string;
+  label: string;
+  type?: 'text' | 'currency' | 'image' | 'actions';
 }
 
 @Component({
@@ -19,13 +21,15 @@ export interface TableColumn {
 })
 
 export class TableComponent implements AfterViewInit {
+  constructor(private exportService: ExportService) {}
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input() title: string = 'Assets';
   @Input() columns: TableColumn[] = [];
-  @Input() data: any[] = [];
+  @Input() data: Asset[] = [];
 
   displayedColumns: string[] = [];
-  dataSource = new MatTableDataSource<any>([]);
+  dataSource = new MatTableDataSource<Asset>([]);
 
   ngOnInit() {
     this.displayedColumns = this.columns.map((c) => c.key);
@@ -36,11 +40,19 @@ export class TableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  deleteItem(item: any) {
-    console.log('Delete', item);
+  protected deleteItem(item: Asset) {
+    console.log('Delete', item); // TODO: Implement delete functionality
   }
 
-  editItem(item: any) {
-    console.log('Edit', item);
+  protected editItem(item: Asset) {
+    console.log('Edit', item); // TODO: Implement edit functionality
+  }
+
+  protected exportToExcel() {
+    this.exportService.exportToExcel(this.data, 'activos.xlsx');
+  }
+
+  protected exportToPDF() {
+    this.exportService.exportToPDF(this.data, 'activos.pdf');
   }
 }

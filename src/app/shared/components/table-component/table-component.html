@@ -12,10 +12,10 @@
         />
       </form>
       <nav class="table-export" aria-label="Exportar datos de la tabla">
-        <button class="export-btn" aria-label="Exportar a Excel">
+        <button class="export-btn" aria-label="Exportar a Excel" (click)="exportToExcel()">
           <mat-icon class="excel-icon">difference</mat-icon>
         </button>
-        <button class="export-btn" aria-label="Exportar a PDF">
+        <button class="export-btn" aria-label="Exportar a PDF" (click)="exportToPDF()">
           <mat-icon class="pdf-icon">picture_as_pdf</mat-icon>
         </button>
       </nav>
