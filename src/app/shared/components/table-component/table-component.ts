@@ -24,7 +24,7 @@ export class TableComponent implements AfterViewInit {
   constructor(private exportService: ExportService) {}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @Input() title: string = 'Assets';
+  @Input() title: string = "";
   @Input() columns: TableColumn[] = [];
   @Input() data: Asset[] = [];
 
