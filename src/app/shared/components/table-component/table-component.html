@@ -1,78 +1,57 @@
-<div class="mat-elevation-z8">
-  <div class="table-header">
+<section>
+  <header class="table-header">
     <h2 class="table-title">{{ title }}</h2>
-    <div class="table-tools">
-      <div class="search-wrapper">
-        <mat-icon class="search-icon">search</mat-icon>
-        <input type="text" class="input-search" placeholder="Search..." />
-      </div>
-      <div class="table-export">
-        <button class="export-btn">
-          <mat-icon class="excel-icon">insert_drive_file</mat-icon>
+    <div class="table-tools" role="toolbar">
+      <form class="search-wrapper" role="search" aria-label="Buscar en la tabla">
+        <mat-icon class="search-icon" aria-hidden="true">search</mat-icon>
+        <input
+          type="text"
+          class="input-search"
+          placeholder="Buscar..."
+          aria-label="Buscar productos"
+        />
+      </form>
+      <nav class="table-export" aria-label="Exportar datos de la tabla">
+        <button class="export-btn" aria-label="Exportar a Excel">
+          <mat-icon class="excel-icon">difference</mat-icon>
         </button>
-        <button class="export-btn"><mat-icon class="pdf-icon">insert_drive_file</mat-icon></button>
-      </div>
+        <button class="export-btn" aria-label="Exportar a PDF">
+          <mat-icon class="pdf-icon">picture_as_pdf</mat-icon>
+        </button>
+      </nav>
     </div>
-  </div>
+  </header>
+
   <table mat-table [dataSource]="dataSource">
-    <ng-container matColumnDef="photo">
-      <th mat-header-cell *matHeaderCellDef>Photo</th>
+    @for (col of columns; track col.key) {
+    <ng-container [matColumnDef]="col.key">
+      <th mat-header-cell *matHeaderCellDef>{{ col.label }}</th>
       <td mat-cell *matCellDef="let element">
-        @if (element.photo) {
-        <img [src]="element.photo" class="photo-img" />
+        @if (col.type === 'image') { @if (element[col.key]) {
+        <img [src]="element[col.key]" class="photo-img" />
         } @else {
         <div class="photo-placeholder">
-          {{ element.name.charAt(0).toUpperCase() }}
+          {{ element.name?.charAt(0)?.toUpperCase() }}
         </div>
+        } } @else if (col.type === 'currency') {
+        {{ element[col.key] | currency : 'CRC' : '₡' }}
+        } @else if (col.type === 'actions') {
+        <button mat-icon-button class="icon-btn edit-btn" (click)="editItem(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button class="icon-btn delete-btn" (click)="deleteItem(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        } @else {
+        {{ element[col.key] }}
         }
       </td>
     </ng-container>
-
-    <ng-container matColumnDef="code">
-      <th mat-header-cell *matHeaderCellDef>Code</th>
-      <td mat-cell *matCellDef="let element">{{ element.code }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="category">
-      <th mat-header-cell *matHeaderCellDef>Category</th>
-      <td mat-cell *matCellDef="let element">{{ element.category }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="unitPrice">
-      <th mat-header-cell *matHeaderCellDef>Unit Price</th>
-      <td mat-cell *matCellDef="let element">
-        {{ element.unitPrice | currency : 'CRC' : 'symbol-narrow' }}
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
-
-      <td mat-cell *matCellDef="let asset">
-        <button mat-icon-button class="icon-btn edit-btn" (click)="editItem(asset)">
-          <mat-icon>edit</mat-icon>
-        </button>
-
-        <button mat-icon-button class="icon-btn delete-btn" (click)="deleteItem(asset)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </ng-container>
+    }
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <mat-paginator
-    class="pagination"
-    [pageSizeOptions]="[5, 10, 20]"
-    showFirstLastButtons
-    aria-label="Select page of periodic elements"
-  >
-  </mat-paginator>
-</div>
+  <mat-paginator class="pagination" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons />
+</section>

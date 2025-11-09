@@ -1,2 +1,6 @@
 <router-outlet />
-<app-table-component></app-table-component>
+<app-table-component
+  title="Productos"
+  [columns]="tableColumns"
+  [data]="products">
+</app-table-component>

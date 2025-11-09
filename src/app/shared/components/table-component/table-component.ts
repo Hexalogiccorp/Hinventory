@@ -4,6 +4,12 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 
+export interface TableColumn {
+  key: string; 
+  label: string; 
+  type?: 'text' | 'currency' | 'image' | 'actions'; 
+}
+
 @Component({
   selector: 'app-table-component',
   imports: [CommonModule, MatTableModule, MatPaginatorModule, CurrencyPipe, MatIconModule],
@@ -15,72 +21,26 @@ import { MatIconModule } from '@angular/material/icon';
 export class TableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @Input() title: string = 'Assets';
+  @Input() columns: TableColumn[] = [];
+  @Input() data: any[] = [];
 
-  protected displayedColumns: string[] = ['photo', 'code', 'name', 'category', 'unitPrice', 'actions'];
-  protected dataSource = new MatTableDataSource<Assets>(ELEMENT_DATA);
+  displayedColumns: string[] = [];
+  dataSource = new MatTableDataSource<any>([]);
 
-  protected deleteItem(asset: Assets) {
-    console.log('Delete action', asset);
-  }
-
-  protected editItem(asset: Assets) {
-    console.log('Edit action', asset);
+  ngOnInit() {
+    this.displayedColumns = this.columns.map((c) => c.key);
+    this.dataSource.data = this.data;
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-}
 
-export interface Assets {
-  photo?: string;
-  code: number;
-  name: string;
-  category: string;
-  unitPrice: number;
-}
+  deleteItem(item: any) {
+    console.log('Delete', item);
+  }
 
-const ELEMENT_DATA: Assets[] = [
-  {
-    code: 1001,
-    name: 'Laptop',
-    category: 'Electronics',
-    unitPrice: 850000,
-    photo: '',
-  },
-  {
-    code: 1002,
-    name: 'Iphone 12',
-    category: 'Electronics',
-    unitPrice: 485000,
-    photo: 'assets/iphone.jpg',
-  },
-  {
-    code: 1003,
-    name: 'Desk Chair',
-    category: 'Furniture',
-    unitPrice: 95000,
-    photo: '',
-  },
-  {
-    code: 1004,
-    name: 'Notebook',
-    category: 'Stationery',
-    unitPrice: 500000,
-    photo: '',
-  },
-  {
-    code: 1005,
-    name: 'Mouse',
-    category: 'Electronics',
-    unitPrice: 25000,
-    photo: '',
-  },
-  {
-    code: 1006,
-    name: 'Headphones',
-    category: 'Electronics',
-    unitPrice: 35000,
-    photo: '',
-  },
-];
+  editItem(item: any) {
+    console.log('Edit', item);
+  }
+}
