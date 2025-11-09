@@ -3,8 +3,8 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
-import { ExportService } from '../../../core';
-import { Asset } from '../../../core';
+import { ExportService } from '@core';
+import { Asset } from '@core';
 
 export interface TableColumn {
   key: string;
