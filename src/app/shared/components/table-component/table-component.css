@@ -1,0 +1,118 @@
+table {
+  width: 100%;
+  background-color: #F1F1F1;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.table-title {
+  font-size: 1.3rem;
+}
+
+.table-tools {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.input-search {
+  padding-left: 35px; 
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.input-search:focus {
+  border-color: #B6B6B6;
+  outline: none;
+}
+
+.table-export {
+  display: flex;
+}
+
+.export-btn {
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.export-btn:hover {
+  transform: scale(1.2);
+}
+
+.excel-icon {
+  color: #059669; 
+}
+
+.pdf-icon {
+  color: #F75050; 
+}
+
+.photo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 1px;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  width: 40px;
+  height: 40px;
+  background: #059669; 
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-btn {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 4px;
+}
+
+.icon-btn mat-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.icon-btn mat-icon:hover {
+  transform: scale(1.2);
+}
+
+.edit-btn mat-icon {
+  color: #7AA9EF;
+}
+
+.delete-btn mat-icon {
+  color: #F75050;
+}
+
+.pagination {
+  background-color: #F1F1F1;
+}
