@@ -1,6 +1,6 @@
 table {
   width: 100%;
-  background-color: #F1F1F1;
+  background-color: var(--hlc-background-color);
 }
 
 .table-header {
@@ -41,7 +41,7 @@ table {
 }
 
 .input-search:focus {
-  border-color: #B6B6B6;
+  border-color: var(--hlc-surface-color);
   outline: none;
 }
 
@@ -61,11 +61,11 @@ table {
 }
 
 .excel-icon {
-  color: #059669; 
+  color: var(--hlc-primary-color); 
 }
 
 .pdf-icon {
-  color: #F75050; 
+  color: var(--hlc-neutral-red-color); 
 }
 
 .photo-img {
@@ -78,7 +78,7 @@ table {
 .photo-placeholder {
   width: 40px;
   height: 40px;
-  background: #059669; 
+  background: var(--hlc-primary-color); 
   color: #fff;
   font-weight: bold;
   font-size: 18px;
@@ -106,13 +106,13 @@ table {
 }
 
 .edit-btn mat-icon {
-  color: #7AA9EF;
+  color: var(--hlc-secondary-color); 
 }
 
 .delete-btn mat-icon {
-  color: #F75050;
+  color: var(--hlc-neutral-red-color); 
 }
 
 .pagination {
-  background-color: #F1F1F1;
+  background-color: var(--hlc-background-color);
 }
