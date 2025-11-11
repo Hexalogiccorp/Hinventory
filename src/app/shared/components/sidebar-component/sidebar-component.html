@@ -1,4 +1,4 @@
-<nav class="navBar">
+<nav class="navbar">
   <div class="burger" (click)="isOpen = !isOpen; drawer.toggle()" [class.open]="isOpen">
     <span></span>
     <span></span>
@@ -16,46 +16,46 @@
     <div class="drawer-content">
       <a
         routerLink="/pandelControl"
-        routerLinkActive="selectedLink"
+        routerLinkActive="selected-link"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="defaultLink"
+        class="default-link"
       >
         <span class="material-icons">dashboard</span>
         Panel de control
       </a>
       <a
         routerLink="/activos"
-        routerLinkActive="selectedLink"
+        routerLinkActive="selected-link"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="defaultLink"
+        class="default-link"
       >
         <span class="material-icons"> description </span>
         Registrar activos
       </a>
       <a
-        routerLinkActive="selectedLink"
+        routerLinkActive="selected-link"
         [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/activos"
-        class="defaultLink"
+        class="default-link"
       >
         <span class="material-icons"> source </span>
         Activos</a
       >
       <a
-        routerLinkActive="selectedLink"
+        routerLinkActive="selected-link"
         [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/cambioContrasena"
-        class="defaultLink"
+        class="default-link"
       >
         <span class="material-icons"> settings </span>
         Cambiar contraseña</a
       >
       <div class="close-sesion-container">
         <a
-          routerLinkActive="selectedLink"
+          routerLinkActive="selected-link"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLink="/cerrarSesion"
-          class="defaultLink"
+          class="default-link"
         >
           <span class="material-icons"> arrow_circle_left </span>
           Cerrar sesión</a

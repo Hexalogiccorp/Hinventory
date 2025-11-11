@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+:root{
+    --hlc-primary-color:#059669;
+    --hlc-secondary-color:#7AA9EF;
+    --hlc-background-color:#FFFFFF;
+    --hlc-surface-color:#F1F1F1;
+    --hlc-error-color:#DC2626;
+    --hlc-warning-color:#F59E0B;
+    --hlc-info-color:#2563EB;
+    --hlc-neutral-red-color:#F75050;
+}
+
+
+html, body { height: 100%; background-color: var(--hlc-background-color); }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

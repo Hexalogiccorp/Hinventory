@@ -1,6 +1,6 @@
-.navBar {
+.navbar {
   padding: 10px;
-  background-color: #f1f1f1;
+  background-color: var(--hlc-surface-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@
 
 .example-sidenav {
   padding: 20px;
-  background-color: #f1f1f1;
+ background-color: var(--hlc-surface-color);
 }
 
 .drawer-content {
@@ -40,11 +40,12 @@ a {
   color: black;
 }
 
-.defaultLink {
+.default-link {
   background-color: #d8d5d5;
 }
-.selectedLink {
-  background-color: #059669;
+
+.selected-link {
+  background-color: var(--hlc-primary-color);
   color: white;
 }
 
@@ -68,7 +69,7 @@ a {
   left: 0;
   width: 35px;
   height: 3px;
-  background: #4e4e4e;
+  background: #000000;
   border-radius: 2px;
   transition: all 0.35s ease-in-out;
 }
@@ -88,7 +89,7 @@ a {
 .burger.open span:nth-child(1) {
   top: 11px;
   transform: rotate(45deg);
-  background: #F75050;
+  background: var(--hlc-neutral-red-color);
 }
 
 .burger.open span:nth-child(2) {
@@ -99,5 +100,5 @@ a {
 .burger.open span:nth-child(3) {
   top: 11px;
   transform: rotate(-45deg);
-  background: #F75050;
+  background: var(--hlc-neutral-red-color);
 }
