@@ -40,11 +40,11 @@ a {
   color: black;
 }
 
-.defaultLink {
+.default-link {
   background-color: #d8d5d5;
 }
 
-.selectedLink {
+.selected-link {
   background-color: var(--hlc-primary-color);
   color: white;
 }
