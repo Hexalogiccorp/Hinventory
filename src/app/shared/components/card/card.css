@@ -1,0 +1,68 @@
+:host {
+  display: block;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.kpi-card {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Distribución del contenido */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+
+/* Texto del lado izquierdo */
+.kpi-info {
+  display: grid;
+  row-gap: 4px;
+}
+
+.kpi-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.kpi-qty {
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 1;
+}
+
+.kpi-icon {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+}
+
+.material-icons {
+  font-size: 80px;
+  opacity: 0.35;
+  color: inherit;
+}
+
+@media (max-width: 360px) {
+  :host, .kpi-card { max-width: 260px; max-height: 260px; }
+  .kpi-qty { font-size: 48px; }
+  .kpi-icon__symbol { font-size: 68px; }
+}
