@@ -1,66 +1,62 @@
-<nav class="navbar">
-  <div class="burger" (click)="isOpen = !isOpen; drawer.toggle()" [class.open]="isOpen">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <div class="logo-container">
-    <img src="assets/logo.svg" alt="LOGO" width="20" height="20" />
-    <h3>HIVENTORY</h3>
-  </div>
-</nav>
-
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side" (openedChange)="isOpen = $event">
+  <mat-drawer
+    #drawer
+    class="example-sidenav"
+    mode="side"
+    opened="true"
+    [style.width.px]="isOpen ? 220 : 90"
+  >
     <div class="drawer-content">
+      <div class="open-menu-container">
+        @if(isOpen){
+        <div class="logo-container">
+          <img src="assets/logo.svg" alt="LOGO" width="20" height="20" />
+          <h3>HIVENTORY</h3>
+        </div>
+        }
+
+        <div class="burger" (click)="isOpen = !isOpen" [class.open]="isOpen">
+          @if(isOpen){
+            <span class="material-icons"> close </span>
+          }@else{
+            <span class="material-icons"> menu </span>
+          }
+        </div>
+      </div>
+
       <a
+        [matTooltip]="!isOpen ? 'Panel de control' : ''"
+        matTooltipPosition="right"
         routerLink="/pandelControl"
         routerLinkActive="selected-link"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="default-link"
+        [ngClass]="{ 'link-close': !isOpen, 'default-link': true }"
       >
         <span class="material-icons">dashboard</span>
-        Panel de control
+        @if(isOpen){ Panel de control }
       </a>
       <a
+        [matTooltip]="!isOpen ? 'Registrar activos' : ''"
+        matTooltipPosition="right"
         routerLink="/activos"
         routerLinkActive="selected-link"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="default-link"
+        [ngClass]="{ 'link-close': !isOpen, 'default-link': true }"
       >
         <span class="material-icons"> description </span>
-        Registrar activos
+        @if(isOpen){ Registrar activos }
       </a>
       <a
+        [matTooltip]="!isOpen ? 'Activos' : ''"
+        matTooltipPosition="right"
         routerLinkActive="selected-link"
         [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/activos"
-        class="default-link"
+        [ngClass]="{ 'link-close': !isOpen, 'default-link': true }"
       >
         <span class="material-icons"> source </span>
-        Activos</a
-      >
-      <a
-        routerLinkActive="selected-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-        routerLink="/cambioContrasena"
-        class="default-link"
-      >
-        <span class="material-icons"> settings </span>
-        Cambiar contraseña</a
-      >
-      <div class="close-sesion-container">
-        <a
-          routerLinkActive="selected-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLink="/cerrarSesion"
-          class="default-link"
-        >
-          <span class="material-icons"> arrow_circle_left </span>
-          Cerrar sesión</a
-        >
-      </div>
+        @if(isOpen){ Activos }
+      </a>
     </div>
   </mat-drawer>
 
