@@ -7,16 +7,11 @@ import { RouterLinkActive, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-component',
-  imports: [MatSidenavModule, MatButtonModule, RouterModule,MatTooltipModule,NgClass],
+  imports: [MatSidenavModule, MatButtonModule, RouterModule, MatTooltipModule, NgClass],
   templateUrl: './sidebar-component.html',
-  styleUrl: './sidebar-component.css'
+  styleUrl: './sidebar-component.css',
 })
-
 export class SidebarComponent {
-   showFiller = false;
-   isOpen = false;
-
-   
-   
-
+  showFiller = false;
+  isOpen = false;
 }

@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: #404040;
+  color: var(--hlc-neutral-text-color);
   height: 44px;
 }
 
@@ -32,7 +32,7 @@ a {
   cursor: pointer;
   font-weight: 500;
   text-decoration: none;
-  color: black;
+  color: var(--hlc-black);
   transition: background-color 0.5s ease;
 }
 .link-close{
@@ -41,7 +41,7 @@ a {
 
 a:hover {
   background-color: var(--hlc-primary-color);
-  color: white;
+  color: var(--hlc-white);
 }
 
 .default-link {
@@ -50,7 +50,7 @@ a:hover {
 
 .selected-link {
   background-color: var(--hlc-primary-color);
-  color: white;
+  color: var(--hlc-white);
 }
 
 .close-sesion-container {
