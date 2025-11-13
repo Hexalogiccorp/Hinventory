@@ -13,18 +13,3 @@
 html, body { height: 100%; background-color: var(--hlc-background-color); }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-
-.green-card.mat-mdc-card { 
-  background-color: var(--hlc-primary-color) !important;
-  color: var(--hlc-background-color) !important;
-}
-
-.red-card.mat-mdc-card { 
-  background-color: var(--hlc-neutral-red-color) !important;
-  color: var(--hlc-background-color) !important;
-}
-
-.warning-card.mat-mdc-card { 
-  background-color: var(--hlc-warning-color) !important;
-  color: var(--hlc-background-color) !important;
-}

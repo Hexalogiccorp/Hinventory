@@ -17,7 +17,6 @@
   justify-content: center;
 }
 
-/* Distribución del contenido */
 .kpi-grid {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -30,7 +29,6 @@
   box-sizing: border-box;
 }
 
-/* Texto del lado izquierdo */
 .kpi-info {
   display: grid;
   row-gap: 4px;
@@ -64,5 +62,19 @@
 @media (max-width: 360px) {
   :host, .kpi-card { max-width: 260px; max-height: 260px; }
   .kpi-qty { font-size: 48px; }
-  .kpi-icon__symbol { font-size: 68px; }
+}
+
+.green-card.mat-mdc-card { 
+  background-color: var(--hlc-primary-color) !important;
+  color: var(--hlc-background-color);
+}
+
+.red-card.mat-mdc-card { 
+  background-color: var(--hlc-neutral-red-color) !important;
+  color: var(--hlc-background-color);
+}
+
+.warning-card.mat-mdc-card { 
+  background-color: var(--hlc-warning-color) !important;
+  color: var(--hlc-background-color);
 }
