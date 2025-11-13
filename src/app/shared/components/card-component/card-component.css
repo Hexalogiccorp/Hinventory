@@ -65,16 +65,16 @@
 }
 
 .green-card.mat-mdc-card { 
-  background-color: var(--hlc-primary-color) !important;
+  background-color: var(--hlc-primary-color);
   color: var(--hlc-background-color);
 }
 
 .red-card.mat-mdc-card { 
-  background-color: var(--hlc-neutral-red-color) !important;
+  background-color: var(--hlc-neutral-red-color);
   color: var(--hlc-background-color);
 }
 
 .warning-card.mat-mdc-card { 
-  background-color: var(--hlc-warning-color) !important;
+  background-color: var(--hlc-warning-color);
   color: var(--hlc-background-color);
 }
