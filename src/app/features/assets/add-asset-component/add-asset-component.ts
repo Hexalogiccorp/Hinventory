@@ -10,7 +10,7 @@ import {
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { DropDownComponent } from '@shared/components/drop-down-component/drop-down-component';
+import { DropDownComponent } from '@shared';
 
 export class ShowOnTouchErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null): boolean {
@@ -73,7 +73,6 @@ export class AddAssetComponent {
       this.assetForm.markAllAsTouched();
       return;
     }
-    console.log(this.assetForm.value);
     this.assetForm.reset();
     this.removeImage();
   }
