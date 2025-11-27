@@ -1,10 +1,10 @@
 import { NgComponentOutlet } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Type } from '@angular/core';
 
 interface TabType {
   icon: string;
   name: string;
-  component: any;
+  component: Type<any>;
 }
 
 @Component({

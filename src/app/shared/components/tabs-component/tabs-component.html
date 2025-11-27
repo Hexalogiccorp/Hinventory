@@ -8,5 +8,5 @@
 </div>
 
 <div class="component-container">
-  <ng-container *ngComponentOutlet="tabsArray[tabActive]?.component"></ng-container>
+  <ng-container *ngComponentOutlet="tabsArray[tabActive]?.component ?? null"></ng-container>
 </div>
