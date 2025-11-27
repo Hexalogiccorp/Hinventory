@@ -6,21 +6,19 @@ import fs from "fs";
 export class DbInitializer {
 
     private static DB_PATH: string;
-    private connection: any;
-    private sqlite: any;
-    public response: object = {};
-    private __filename!: any;
-    private __dirname!: any;
+    private connection!: sqlite3.Database;   
+    private sqlite: sqlite3.sqlite3; 
+    public response: Record<string, unknown> = {};
+    private __filename: string;
+    private __dirname: string;
 
     constructor() {
-        //Attributes
         this.__filename = fileURLToPath(import.meta.url);
         this.__dirname = path.dirname(this.__filename);
         const databaseName = "database.sqlite3"
         DbInitializer.DB_PATH = path.join(this.__dirname, databaseName);
         this.sqlite = sqlite3.verbose();
 
-        //functions
         this.generateConnection();
     }
 
@@ -106,9 +104,8 @@ export class DbInitializer {
 
             this.response = { response: "Success" };
 
-        } catch (err: any) {
+        } catch (err) {
             this.response = { response: err };
-            throw err;
         }
     }
 }

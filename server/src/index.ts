@@ -11,6 +11,4 @@ app.get("/", async (req: Request, res: Response) => {
     return res.json((await DbInitializer.create()).response);
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Servidor escuchando en http://localhost:${PORT}`);
-});
+app.listen(PORT, () => {});
