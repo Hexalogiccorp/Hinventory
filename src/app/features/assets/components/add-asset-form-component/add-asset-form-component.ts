@@ -12,7 +12,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DropDownComponent } from '@shared';
 
-
 export class ShowOnTouchErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null): boolean {
     return !!(control && control.invalid && (control.touched || control.dirty));
@@ -21,16 +20,18 @@ export class ShowOnTouchErrorStateMatcher implements ErrorStateMatcher {
 
 @Component({
   selector: 'app-add-asset-form-component',
-  imports: [DropDownComponent,
+  imports: [
+    DropDownComponent,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule,],
+    ReactiveFormsModule,
+  ],
   templateUrl: './add-asset-form-component.html',
-  styleUrl: './add-asset-form-component.css'
+  styleUrl: './add-asset-form-component.css',
 })
 export class AddAssetFormComponent {
-imageUrl: string | null = null;
+  imageUrl: string | null = null;
   assetForm!: FormGroup;
   constructor(private fb: FormBuilder) {
     this.assetForm = this.fb.group({
@@ -62,7 +63,7 @@ imageUrl: string | null = null;
   removeImage() {
     this.imageUrl = null;
   }
-  
+
   setCategory(idCategory: number) {
     this.assetForm.patchValue({ categoria: idCategory });
   }
