@@ -1,15 +1,15 @@
 .add-asset-container {
   background-color: var(--hlc-background-color);
-  padding: 20px;
-  text-align: center;
-  display: flex;
+  margin-inline: 2rem;
+  margin-top: 2rem;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
 }
 
 .general-form-container {
-  width: 50%;
+  width: 70%;
+  margin-top: 50px;
 }
 
 .form-container {
@@ -68,6 +68,7 @@
   color: var(--hlc-primary-color);
 }
 
+
 .submit-asset-button {
   width: 100%;
   padding: 15px;
@@ -78,6 +79,8 @@
   border: none;
   cursor: pointer;
   transition: transform 0.5s ease;
+  margin-left: auto;
+  margin-bottom: 20px;
 }
 
 .submit-asset-button:hover {
