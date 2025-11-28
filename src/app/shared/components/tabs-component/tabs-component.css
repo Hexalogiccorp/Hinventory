@@ -1,0 +1,29 @@
+.tab-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-inline: 2rem;
+  margin-top: 2rem;
+}
+
+.tab {
+  background-color: var(--hlc-background-color);
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: solid 1.5px var(--hlc-input-background-color);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tab:hover {
+  background-color: var(--hlc-primary-color);
+  color: var(--hlc-white);
+}
+
+.active {
+  background-color: var(--hlc-primary-color);
+  color: var(--hlc-white);
+}
