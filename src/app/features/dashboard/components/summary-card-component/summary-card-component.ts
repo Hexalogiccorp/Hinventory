@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-summary-card-component',
@@ -11,4 +12,13 @@ export class SummaryCardComponent {
   @Input() title: string = '';
   @Input() quantity: number = 0;
   @Input() backgroundColor: string = '';
+  @Input() route: string = '';
+
+  constructor(private router: Router) {}
+
+  protected navigate() {
+  if (this.route) {
+    this.router.navigate([this.route]);
+  }
+}
 }
