@@ -30,6 +30,7 @@ export class ShowOnTouchErrorStateMatcher implements ErrorStateMatcher {
 export class AddCategoryFormComponent {
   categoryForm!: FormGroup;
 
+  
   constructor(private fb: FormBuilder) {
     this.categoryForm = this.fb.group({
       nombre: ['', Validators.required],
