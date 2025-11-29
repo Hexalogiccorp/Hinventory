@@ -19,7 +19,7 @@ export class ShowOnTouchErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-add-asset-component',
+  selector: 'app-add-asset-form-component',
   imports: [
     DropDownComponent,
     FormsModule,
@@ -27,10 +27,10 @@ export class ShowOnTouchErrorStateMatcher implements ErrorStateMatcher {
     MatInputModule,
     ReactiveFormsModule,
   ],
-  templateUrl: './add-asset-component.html',
-  styleUrl: './add-asset-component.css',
+  templateUrl: './add-asset-form-component.html',
+  styleUrl: './add-asset-form-component.css',
 })
-export class AddAssetComponent {
+export class AddAssetFormComponent {
   imageUrl: string | null = null;
   assetForm!: FormGroup;
   constructor(private fb: FormBuilder) {
@@ -63,7 +63,7 @@ export class AddAssetComponent {
   removeImage() {
     this.imageUrl = null;
   }
-  
+
   setCategory(idCategory: number) {
     this.assetForm.patchValue({ categoria: idCategory });
   }
