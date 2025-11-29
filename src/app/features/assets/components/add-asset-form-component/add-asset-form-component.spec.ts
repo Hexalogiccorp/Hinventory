@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SummaryCardComponent } from './summary-card-component';
 
-describe('SummaryCardComponent', () => {
-  let component: SummaryCardComponent;
-  let fixture: ComponentFixture<SummaryCardComponent>;
+import { AddAssetFormComponent } from './add-asset-form-component';
+
+describe('AddAssetFormComponent', () => {
+  let component: AddAssetFormComponent;
+  let fixture: ComponentFixture<AddAssetFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SummaryCardComponent]
+      imports: [AddAssetFormComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SummaryCardComponent);
+    fixture = TestBed.createComponent(AddAssetFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
