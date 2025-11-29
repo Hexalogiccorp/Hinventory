@@ -7,15 +7,6 @@
   height: 44px;
 }
 
-.example-container {
-  height: 100vh;
-}
-
-.example-sidenav {
-  padding: 20px;
-  background-color: var(--hlc-surface-color);
-}
-
 .drawer-content {
   display: flex;
   flex-direction: column;
@@ -35,6 +26,7 @@ a {
   color: var(--hlc-black);
   transition: background-color 0.5s ease;
 }
+
 .link-close{
   justify-content: center;
 }
@@ -62,6 +54,7 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
+
 .burger {
   width: 100%;
   display: flex;
