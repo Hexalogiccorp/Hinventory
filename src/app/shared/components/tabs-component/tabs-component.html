@@ -1,0 +1,12 @@
+<div class="tab-container">
+  @for(tab of tabsArray; let i = $index ; track tab.name){
+  <button class="tab" [class.active]="i == tabActive" (click)="getTab(i)">
+    <span class="material-icons">{{ tab.icon }}</span>
+    {{ tab.name }}
+  </button>
+  }
+</div>
+
+<div class="component-container">
+  <ng-container *ngComponentOutlet="tabsArray[tabActive]?.component ?? null"></ng-container>
+</div>
