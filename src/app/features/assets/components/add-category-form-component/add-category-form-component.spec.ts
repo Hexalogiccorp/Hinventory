@@ -11,7 +11,6 @@ describe('AddCategoryFormComponent', () => {
       imports: [AddCategoryFormComponent]
     })
     .compileComponents();
-
     fixture = TestBed.createComponent(AddCategoryFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

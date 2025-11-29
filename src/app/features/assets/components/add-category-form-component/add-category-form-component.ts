@@ -16,7 +16,6 @@ export class ShowOnTouchErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.touched || control.dirty));
   }
 }
-
 @Component({
   selector: 'app-add-category-form-component',
   imports: [
