@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateAssetPage } from './create-asset-page';
+import { AssetPage } from './asset-page';
 
 describe('CreateAssetPage', () => {
-  let component: CreateAssetPage;
-  let fixture: ComponentFixture<CreateAssetPage>;
+  let component: AssetPage;
+  let fixture: ComponentFixture<AssetPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CreateAssetPage]
+      imports: [AssetPage]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CreateAssetPage);
+    fixture = TestBed.createComponent(AssetPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
