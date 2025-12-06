@@ -1,22 +1,16 @@
 import { Component } from '@angular/core';
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
   Validators,
-} from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
+} from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DropDownComponent } from '@shared';
 
-export class ShowOnTouchErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null): boolean {
-    return !!(control && control.invalid && (control.touched || control.dirty));
-  }
-}
+
 
 @Component({
   selector: 'app-add-asset-form-component',
