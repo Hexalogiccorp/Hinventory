@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SummaryCard } from '../models/dashboard.model';
-import { SummaryCardComponent } from '../components/summary-card-component/summary-card-component';
+import { SummaryCard } from '../../models/dashboard.model';
+import { SummaryCardComponent } from '../../components/summary-card-component/summary-card-component';
 
 @Component({
   selector: 'app-dashboard-page',
