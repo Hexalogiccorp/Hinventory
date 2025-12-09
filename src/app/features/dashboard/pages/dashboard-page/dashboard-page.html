@@ -1,0 +1,17 @@
+<div class="page-wrapper">
+  <div class="dashboard-container">
+    <h2 class="title">Activos</h2>
+    <div class="summary-grid">
+      @for (card of summaryCards; track $index) {
+      <app-summary-card-component
+        [icon]="card.icon"
+        [title]="card.title"
+        [quantity]="card.quantity"
+        [backgroundColor]="card.backgroundColor"
+        [route]="card.route"
+      >
+      </app-summary-card-component>
+      }
+    </div>
+  </div>
+</div>
