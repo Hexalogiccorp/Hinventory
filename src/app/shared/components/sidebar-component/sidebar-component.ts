@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { RouterModule } from '@angular/router';
+import { RouterLinkActive, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-component',
