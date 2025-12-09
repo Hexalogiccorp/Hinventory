@@ -1,0 +1,18 @@
+.page-wrapper {
+  display: block;
+  padding: 24px;
+}
+
+.page-wrapper .dashboard-container .title {
+    margin-bottom: 32px;
+}
+
+.dashboard-container {
+  width: 100%;                          
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
