@@ -1,64 +1,41 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer
-    #drawer
-    class="example-sidenav"
-    mode="side"
-    opened="true"
-    [style.width.px]="isOpen ? 220 : 90"
-  >
-    <div class="drawer-content">
-      <div class="open-menu-container">
-        @if(isOpen){
-        <div class="logo-container">
-          <img src="assets/logo.svg" alt="LOGO" width="20" height="20" />
-          <h3>HIVENTORY</h3>
-        </div>
-        }
-
-        <div class="burger" (click)="isOpen = !isOpen" [class.open]="isOpen">
-          @if(isOpen){
-            <span class="material-icons"> close </span>
-          }@else{
-            <span class="material-icons"> menu </span>
-          }
-        </div>
-      </div>
-
-      <a
-        [matTooltip]="!isOpen ? 'Panel de control' : ''"
-        matTooltipPosition="right"
-        routerLink="/pandelControl"
-        routerLinkActive="selected-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-        [ngClass]="{ 'link-close': !isOpen, 'default-link': true }"
-      >
-        <span class="material-icons">dashboard</span>
-        @if(isOpen){ Panel de control }
-      </a>
-      <a
-        [matTooltip]="!isOpen ? 'Registrar activos' : ''"
-        matTooltipPosition="right"
-        routerLink="/activos"
-        routerLinkActive="selected-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-        [ngClass]="{ 'link-close': !isOpen, 'default-link': true }"
-      >
-        <span class="material-icons"> description </span>
-        @if(isOpen){ Registrar activos }
-      </a>
-      <a
-        [matTooltip]="!isOpen ? 'Activos' : ''"
-        matTooltipPosition="right"
-        routerLinkActive="selected-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-        routerLink="/activos"
-        [ngClass]="{ 'link-close': !isOpen, 'default-link': true }"
-      >
-        <span class="material-icons"> source </span>
-        @if(isOpen){ Activos }
-      </a>
+<div class="drawer-content">
+  <div class="open-menu-container">
+    @if(isOpen){
+    <div class="logo-container">
+      <img src="assets/logo.svg" alt="LOGO" width="20" height="20" />
+      <h3>HIVENTORY</h3>
     </div>
-  </mat-drawer>
+    }
 
-  <div>Contenido</div>
-</mat-drawer-container>
+    <div class="burger" (click)="toggle()" [class.open]="isOpen">
+      @if(isOpen){
+      <span class="material-icons"> close </span>
+      }@else{
+      <span class="material-icons"> menu </span>
+      }
+    </div>
+  </div>
+
+  <a
+    [matTooltip]="!isOpen ? 'Panel de control' : ''"
+    matTooltipPosition="right"
+    routerLink="/pandelControl"
+    routerLinkActive="selected-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [ngClass]="{ 'link-close': !isOpen, 'default-link': true }"
+  >
+    <span class="material-icons">dashboard</span>
+    @if(isOpen){ Panel de control }
+  </a>
+  <a
+    [matTooltip]="!isOpen ? 'Activos' : ''"
+    matTooltipPosition="right"
+    routerLink="/activos"
+    routerLinkActive="selected-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [ngClass]="{ 'link-close': !isOpen, 'default-link': true }"
+  >
+    <span class="material-icons"> description </span>
+    @if(isOpen){ Activos }
+  </a>
+</div>
