@@ -1,5 +1,6 @@
 <div class="add-asset-container">
-  <h2>Registrar activo</h2>
+  <h2>Agregar nuevo activo</h2>
+
   <form action="" [formGroup]="assetForm" (ngSubmit)="onSubmit()" class="general-form-container">
     <div class="form-container">
       <div class="left-container">
@@ -76,8 +77,11 @@
             hidden
           />
         </div>
+       
+        <button class="submit-asset-button" type="submit">Registrar</button>
+   
       </div>
     </div>
-    <button class="submit-asset-button" type="submit">Registrar</button>
+
   </form>
 </div>
