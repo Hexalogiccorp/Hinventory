@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
-import { AssetPage } from './features/assets/pages/asset-page/asset-page';
-import { DashboardPage } from './features/dashboard/pages/dashboard-page/dashboard-page';
+import { AssetPage,DashboardPage } from '@features';
 
 export const routes: Routes = [
     {path:'asset' , component:AssetPage},
