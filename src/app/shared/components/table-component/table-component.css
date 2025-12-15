@@ -38,6 +38,7 @@ table {
   height: 30px;
   border-radius: 6px;
   border: 1px solid transparent;
+  background-color: var(--hlc-surface-color);
 }
 
 .input-search:focus {

@@ -1,0 +1,16 @@
+.active-detail-container {
+  margin-inline: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.card-container{
+    display: flex;
+    gap: 2rem;
+
+}
+
+
+
