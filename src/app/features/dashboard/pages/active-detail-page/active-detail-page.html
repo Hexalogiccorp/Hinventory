@@ -1,0 +1,20 @@
+<div class="active-detail-container">
+  <div class="card-container">
+    @for(cardData of cardDetails; track cardData.title){
+    <app-card-component
+      [title]="cardData.title"
+      [quantity]="cardData.quantity"
+      [styles]="cardData.styles"
+      [icon]="cardData.icon"
+    />
+    }
+  </div>
+
+  <div class="table-container">
+        <app-table-component
+        [title]="tableTitle"
+        [columns]="tableColumns"
+        [data]="data"
+        />
+  </div>
+</div>
