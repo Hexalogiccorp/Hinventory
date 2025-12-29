@@ -1,7 +1,7 @@
-.example-container {
+.sidenav-container {
   height: 100vh;
 }
-.example-sidenav {
+.sidenav {
   padding: 20px;
   background-color: var(--hlc-surface-color);
 }
