@@ -6,8 +6,8 @@ import fs from "fs";
 export class DbInitializer {
 
     private static DB_PATH: string;
-    private connection!: sqlite3.Database;   
-    private sqlite: sqlite3.sqlite3; 
+    private connection!: sqlite3.Database;
+    private sqlite: sqlite3.sqlite3;
     public response: Record<string, unknown> = {};
     private __filename: string;
     private __dirname: string;
@@ -40,6 +40,7 @@ export class DbInitializer {
         if (!this.findDatabase()) {
             const db = new DbInitializer();
             await db.generateTables();
+            await db.generateDataTables();
             return db;
         } else {
             return { "response": false };
@@ -106,6 +107,141 @@ export class DbInitializer {
 
         } catch (err) {
             this.response = { response: err };
+        }
+    }
+
+    private async generateDataTables(): Promise<void> {
+        try {
+            await this.runQuery(`
+                INSERT INTO estado (id, nombre, descripcion) VALUES 
+                    (1, 'Disponible', 'Activo listo para ser utilizado'),
+                    (2, 'Reparacion', 'Activo que se encuentra en reparacion'),
+                    (3, 'Dañado', 'Activo que se encuentra dañado');    
+            `);
+
+            await this.runQuery(`
+                INSERT INTO categoria (nombre, siglas, descripcion) VALUES
+                    ('Computadoras', 'PC', 'Equipos de cómputo'),
+                    ('Mobiliario', 'MB', 'Muebles de oficina'),
+                    ('Redes', 'RD', 'Equipo de red'),
+                    ('Electrónicos', 'EL', 'Dispositivos electrónicos');
+                `);
+
+            await this.runQuery(`
+                INSERT INTO activos (
+                codigo,
+                nombre,
+                marca,
+                precio,
+                modelo,
+                ultima_actualizacion,
+                fecha_creacion,
+                n_serial,
+                id_categoria,
+                id_estado
+            ) VALUES
+            (
+                'ACT-0003',
+                'Monitor Samsung',
+                'Samsung',
+                180000,
+                'S24F350',
+                time('now'),
+                time('now'),
+                'SMS24F350SN001',
+                1, -- Computadoras
+                1
+            ),
+            (
+                'ACT-0004',
+                'Teclado Mecánico',
+                'Logitech',
+                65000,
+                'G413',
+                time('now'),
+                time('now'),
+                'LOGG413SN002',
+                1,
+                1
+            ),
+            (
+                'ACT-0005',
+                'Mouse Inalámbrico',
+                'Logitech',
+                45000,
+                'MX Master 3',
+                time('now'),
+                time('now'),
+                'LOGMX3SN003',
+                1,
+                1
+            ),
+            (
+                'ACT-0006',
+                'Escritorio Oficina',
+                'OfficePro',
+                220000,
+                'OP-Desk120',
+                time('now'),
+                time('now'),
+                'OPDSK120SN004',
+                2, -- Mobiliario
+                1
+            ),
+            (
+                'ACT-0007',
+                'Silla Ergonómica',
+                'Herman Miller',
+                950000,
+                'Aeron',
+                time('now'),
+                time('now'),
+                'HMAERONSN005',
+                2,
+                1
+            ),
+            (
+                'ACT-0008',
+                'Switch 24 Puertos',
+                'TP-Link',
+                175000,
+                'TL-SG1024',
+                time('now'),
+                time('now'),
+                'TPLSG1024SN006',
+                3, -- Redes
+                1
+            ),
+            (
+                'ACT-0009',
+                'Proyector Epson',
+                'Epson',
+                680000,
+                'PowerLite X49',
+                time('now'),
+                time('now'),
+                'EPSX49SN007',
+                4, -- Electrónicos
+                1
+            ),
+            (
+                'ACT-0010',
+                'Impresora Laser',
+                'HP',
+                320000,
+                'LaserJet Pro M404',
+                time('now'),
+                time('now'),
+                'HPM404SN008',
+                4,
+                1
+            );`);
+            
+            this.response = { response: "Success" };
+
+        } catch (err) {
+            this.response = { response: err };
+            console.log(err);
         }
     }
 }
